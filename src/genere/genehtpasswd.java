@@ -7,10 +7,11 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 public class genehtpasswd {
-	public static String generehtpasswd () {
+	public static String generehtpasswdstaff () {
 		String msgErr = null;
         String fileName = "/Users/pierre-richardpascal/eclipse-workspace/genere/src/.htpasswd";
         String encoding = "UTF-8";
+        String filestaff = "/Users/pierre-richardpascal/eclipse-workspace/genere/src/staff.txt";
         File repertoire = new File("/Users/pierre-richardpascal/eclipse-workspace/genere/src/FicheAgent");
         String liste[] = repertoire.list(); 
         int i;
@@ -18,6 +19,7 @@ public class genehtpasswd {
 
         try{
         PrintWriter writer = new PrintWriter(fileName, encoding);
+        PrintWriter staff = new PrintWriter(filestaff, encoding);
         if (liste != null) {         
             for (int iFichier = 0; iFichier < liste.length; iFichier++) {
                 //On recupere le nom des fichiers
@@ -35,8 +37,9 @@ public class genehtpasswd {
                   }
                 //on ecrit dans le fichier le login et password dans htpasswd
                 writer.println(liste[iFichier].replace(".txt","")+ ":" + line);
+                staff.println(liste[iFichier].replace(".txt",""));
             }
-            
+            staff.close();
             writer.close();
             return msgErr = "ok";
         } else {
