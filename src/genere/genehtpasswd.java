@@ -9,10 +9,10 @@ import java.io.PrintWriter;
 public class genehtpasswd {
 	public static String generehtpasswdstaff () {
 		String msgErr = null;
-        String fileName = "/Users/pierre-richardpascal/eclipse-workspace/genere/src/.htpasswd";
+        String fileName = "/Users/anisayoudj/Desktop/pr/.htpasswd";
         String encoding = "UTF-8";
-        String filestaff = "/Users/pierre-richardpascal/eclipse-workspace/genere/src/staff.txt";
-        File repertoire = new File("/Users/pierre-richardpascal/eclipse-workspace/genere/src/FicheAgent");
+        String filestaff = "/Users/anisayoudj/Sites/staff.txt";
+        File repertoire = new File("/Users/anisayoudj/Sites/FicheAgent");
         String liste[] = repertoire.list(); 
         int i;
         String line = new String();
@@ -23,9 +23,9 @@ public class genehtpasswd {
         if (liste != null) {         
             for (int iFichier = 0; iFichier < liste.length; iFichier++) {
                 //On recupere le nom des fichiers
-                FileReader file = new FileReader("/Users/pierre-richardpascal/eclipse-workspace/genere/src/FicheAgent/" + liste[iFichier]);
+                FileReader file = new FileReader("/Users/anisayoudj/Sites/FicheAgent/" + liste[iFichier]);
                 BufferedReader buffer = new BufferedReader(file);
-
+                String nomStaff = liste[iFichier].replace(".txt","");
                 for (i = 1; i < 10; i++) {
                     // Si le numéro de la ligne = 4 récupérer la ligne car c'est la qu'on obtient le mdp
                     if (i == 4){
@@ -37,7 +37,6 @@ public class genehtpasswd {
                   }
                 //on ecrit dans le fichier le login et password dans htpasswd
                 writer.println(liste[iFichier].replace(".txt","")+ ":" + line);
-                staff.println(liste[iFichier].replace(".txt",""));
             }
             staff.close();
             writer.close();

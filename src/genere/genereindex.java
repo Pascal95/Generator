@@ -7,7 +7,7 @@ import java.io.UnsupportedEncodingException;
 
 public class genereindex {
 	public static void genindex() throws FileNotFoundException, UnsupportedEncodingException {
-		String fileName = "/Users/pierre-richardpascal/eclipse-workspace/genere/src/index.html";
+		String fileName = "/Users/anisayoudj/Sites/index.html";
 		String encoding = "UTF-8";
 	    PrintWriter writer = new PrintWriter(fileName, encoding);
 		writer.println("<!DOCTYPE html>");
@@ -24,11 +24,11 @@ public class genereindex {
 		writer.println("			#checkboxes ul {margin: 0;list-style: none;vertical-align: center;}");
 		writer.println("		</style>");
 		writer.println("	<body>");
-		writer.println("		<img src = 'gosecuri.png' style='text-align:center'>");
-		File dir = new File("/Users/pierre-richardpascal/eclipse-workspace/genere/src/FicheAgent");
+		writer.println("		<img src = 'gosecuri.png' style='text-align:center'></br>");
+		File dir = new File("/Users/anisayoudj/Sites/FicheAgent");
 		File[] liste = dir.listFiles();
 		for(File item : liste) {
-			writer.println("		<a href = '"+ item.getName().replace(".txt",".html") +"'>"+item.getName().replace(".txt", "")+"</a>");
+			writer.println("		<a href = '/Users/anisayoudj/Sites/private/"+ item.getName().replace(".txt",".html") +"'>"+item.getName().replace(".txt", "")+"</a>");
 		}
 		writer.println("	</body>");
 		writer.println("</html>");

@@ -8,7 +8,7 @@ public class main {
 		Boolean ErrHtml = null;
 		String nomFichier = null;
 		String NomAgent;
-		File staff = new File("/Users/pierre-richardpascal/eclipse-workspace/genere/src/staff.txt");
+		File staff = new File("/Users/anisayoudj/Sites/staff.txt");
 		if (staff.createNewFile()) {
 			System.out.println("Le staff.txt est crée");
         }else {
@@ -21,27 +21,19 @@ public class main {
 		}
 		
 		// Genere les fiches agent
-		File dir = new File("/Users/pierre-richardpascal/eclipse-workspace/genere/src/FicheAgent");
+		File dir = new File("/Users/anisayoudj/Sites/FicheAgent");
 		File[] liste = dir.listFiles();
 		for(File item : liste) {
 			nomFichier = item.getName().replace(".txt",".html");
-			File f = new File("/Users/pierre-richardpascal/eclipse-workspace/genere/src/"+ nomFichier);			  
+		  
             // Créer un nouveau fichier
             // Vérifier s'il n'existe pas
-
-            if (f.createNewFile()) {
-           
-            	
-            	System.out.println("Le fichier "+nomFichier+ " a bien été crée.");
-            }
-            else {
-            	System.out.println("File already exists");            	
-            }
             ErrHtml = generehtml.genhtml(nomFichier);
+            System.out.println("Le fichier "+nomFichier+ " a bien été crée.");
             
         }
 		//Genere index
-		File index = new File("/Users/pierre-richardpascal/eclipse-workspace/genere/src/index.html");
+		File index = new File("/Users/anisayoudj/Sites/index.html");
         if (index.createNewFile()) {
         	genereindex.genindex();
         }else {

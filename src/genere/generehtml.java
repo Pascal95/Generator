@@ -2,9 +2,9 @@ package genere;
 import java.io.*;
 public class generehtml {
 	public static boolean genhtml(String login) throws IOException {
-		String fileName = "/Users/pierre-richardpascal/eclipse-workspace/genere/src/" + login;
+		String fileName = "/Users/anisayoudj/Sites/private/" + login;
 	    String encoding = "UTF-8";
-		FileReader ficheagent = new FileReader("/Users/pierre-richardpascal/eclipse-workspace/genere/src/FicheAgent/" + login.replace(".html", ".txt"));
+		FileReader ficheagent = new FileReader("/Users/anisayoudj/Sites/FicheAgent/" + login.replace(".html", ".txt"));
         BufferedReader bufferagent = new BufferedReader(ficheagent);
         String lineAgent;
         String nom = null;
@@ -64,7 +64,7 @@ public class generehtml {
 		writer.println("		<article>");
 		writer.println("		<div class='container'> ");
 		writer.println("			<h1>"+nom +" "+ prenom+"</h1>");
-		writer.println("			<img class='image'src = 'photoAgent/"+login.replace(".html", ".jpg")+"' height = '200'>");
+		writer.println("			<img class='image'src = '../photoAgent/"+login.replace(".html", ".jpg")+"' height = '200'>");
 		writer.println("		</div> ");
 		writer.println("		</article>");
 		writer.println("		<p>Vous occuperez le poste de : "+ poste +" </p>");

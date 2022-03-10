@@ -6,7 +6,7 @@ import java.io.UnsupportedEncodingException;
 
 public class generestaff {
 	public static void genstaff(String login) throws FileNotFoundException, UnsupportedEncodingException{
-		String fileName = "/Users/pierre-richardpascal/eclipse-workspace/genere/src/staff.txt";
+		String fileName = "/Users/anisayoudj/Sites/staff.txt";
 		String encoding = "UTF-8";
 	    try (PrintWriter writer = new PrintWriter(fileName, encoding)) {
 			writer.println(login +"ok");
